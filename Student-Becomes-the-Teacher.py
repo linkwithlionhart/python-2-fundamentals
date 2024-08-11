@@ -1,3 +1,13 @@
+"""
+This module contains functions to assess the grades of students and produce a letter grade for students and the class.
+
+Functions
+- average: Returns the average score from a list of grades.
+- get_average: Returns the weighted average from lists of grades.
+- get_letter_grade: Returns a letter grade from the weighted average.
+- get_class_average: Returns a class average from a list of students.
+"""
+
 lloyd = {
   "name": "Lloyd",
   "homework": [90.0, 97.0, 75.0, 92.0],
