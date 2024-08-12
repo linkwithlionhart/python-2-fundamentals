@@ -109,3 +109,135 @@ Loops
   """
 
 # 9/19
+  print "Counting..."
+
+  for i in range(20):
+    print i  
+
+# 10/19
+  hobbies = []
+
+  # Add your code below!
+  for hobby in range(3):
+    hobby = str(raw_input("What is your hobby? "))
+    hobbies.append(hobby)
+    print hobbies
+
+# 11/19
+  thing = "spam!"
+
+  for c in thing:
+    print c
+
+  word = "eggs!"
+
+  # Your code here!
+  for letter in word:
+    print letter
+
+# 12/19
+  phrase = "A bird in the hand..."
+
+  # Add your for loop
+  for char in phrase:
+    if char == "A" or char == "a":
+      print "X",
+    else:
+      print char,
+
+  #Don't delete this print statement!
+  print
+
+# 13/19
+  numbers  = [7, 9, 12, 54, 99]
+
+  print "This list contains: "
+
+  for num in numbers:
+    print num
+
+  # Add your loop below!
+  for num in numbers:
+    print num ** 2
+
+# 14/19
+  d = {'a': 'apple', 'b': 'berry', 'c': 'cherry'}
+
+  for key in d:
+    # Your code here!
+    print key + " " + d[key]
+  
+# 15/19
+  choices = ['pizza', 'pasta', 'salad', 'nachos']
+
+  print 'Your choices are:'
+  for index, item in enumerate(choices):
+    print index+1, item
+
+# 16/19
+  list_a = [3, 9, 17, 15, 19]
+  list_b = [2, 4, 8, 10, 30, 40, 50, 60, 70, 80, 90]
+
+  for a, b in zip(list_a, list_b):
+    # Add your code here!
+    if a > b:
+      print a
+    else:
+      print b
+    # print a, b
+    # print zip(list_a, list_b)
+
+  for a,b in zip(list_a, list_b):
+    print max(a, b)
+
+# 17/19
+  fruits = ['banana', 'apple', 'orange', 'tomato', 'pear', 'grape']
+
+  print 'You have...'
+  for f in fruits:
+    if f == 'tomato':
+      print 'A tomato is not a fruit!' # (It actually is.)
+      break
+    print 'A', f
+  else:
+    print 'A fine selection of fruits!'
+  
+  """
+  In this case, the else statement is executed after the for, but only if the for ends normally—that is, not with a break. 
+  This code will break when it hits 'tomato', so the else block won’t be executed.
+  """
+
+# 18/19
+  fruits = ['banana', 'apple', 'orange', 'tomato', 'pear', 'grape']
+
+  print 'You have...'
+  for f in fruits:
+    if f == 'tomato':
+      print 'A tomato is not a fruit!' # (It actually is.)
+      # break
+    print 'A', f
+  else:
+    print 'A fine selection of fruits!'
+
+# 19/19
+  from random import randint
+
+  starters = [
+    'Squirtle', 'Charmander', 'Bulbasaur', 'Pikachu', 'Eevee'
+    ]
+
+  def select(starters):
+    randomizer = random.randint(0, 8)
+    if randomizer <= 4:
+      selection = starters[randomizer]
+      return selection
+
+  # print 'User has chosen: ' + select(starters)
+
+  for pokemon in starters:
+    if select(starters) == pokemon:
+      print 'With, ' + pokemon + '. You may become champion.'
+      break
+    print pokemon
+  else: 
+    print 'You will not become champion.'
