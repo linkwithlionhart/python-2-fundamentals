@@ -113,3 +113,19 @@
   Make sure you double check variable naming. My conflict with score took longer to solve than expected. The approach was correct.
   """
 #10/15
+def censor(text, word):
+  for letter in word:
+    # problem: the sequence of the letters in 'word' is key
+    # solution: preserve the order
+    # implementation: use a switch in a while loop so that if the next letter after the word is also equal to the letter in text, the switch remains true and will perform some action. it is not equal, the switch will be false and will not perform the action.
+
+    while True:
+      if letter in word:
+
+
+  # return text replaced by word to asterisks
+
+text = "this hack is wack hack"
+word = "wack"
+
+censor(text, word)
