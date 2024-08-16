@@ -74,4 +74,42 @@
   reverse('palindrome')
 
 #8/15
-  
+  # make vowel reference
+  lower_vowels = 'aeiou'
+  upper_vowels = lower_vowels.upper()
+  all_vowels = lower_vowels + upper_vowels
+  print all_vowels
+
+  def anti_vowel(text):
+    # initialize result to return
+    result = ''
+    # only concatenate matches in vowel reference
+    for letter in text:
+      if letter not in all_vowels:
+        result += letter
+    return result
+
+  print anti_vowel("Hey You!")
+
+#9/15
+  score = {"a": 1, "c": 3, "b": 3, "e": 1, "d": 2, "g": 2, 
+          "f": 4, "i": 1, "h": 4, "k": 5, "j": 8, "m": 3, 
+          "l": 1, "o": 1, "n": 1, "q": 10, "p": 3, "s": 1, 
+          "r": 1, "u": 1, "t": 1, "w": 4, "v": 4, "y": 4, 
+          "x": 8, "z": 10}
+
+  word = "Helix"
+
+  def scrabble_score(word):
+    total_score = 0
+    lower_word = word.lower()
+    for letter in lower_word:
+      total_score += score[letter]
+    return total_score
+
+  print scrabble_score(word)
+
+  """
+  Make sure you double check variable naming. My conflict with score took longer to solve than expected. The approach was correct.
+  """
+#10/15
