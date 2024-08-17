@@ -113,19 +113,63 @@
   Make sure you double check variable naming. My conflict with score took longer to solve than expected. The approach was correct.
   """
 #10/15
-def censor(text, word):
-  for letter in word:
-    # problem: the sequence of the letters in 'word' is key
-    # solution: preserve the order
-    # implementation: use a switch in a while loop so that if the next letter after the word is also equal to the letter in text, the switch remains true and will perform some action. it is not equal, the switch will be false and will not perform the action.
+  def censor(text, word):
+    text_list = text.split()
+    # print text_list
+    result = ''
+    stars = '*' * len(word)
+    count = 0
 
-    while True:
-      if letter in word:
+    for target in text_list:
+      if target == word:
+        # print target
+        text_list[count] = stars
+      count += 1
+    result = ' '.join(text_list)
 
+    return result
 
-  # return text replaced by word to asterisks
+  # test case
+  text = "this hack is wack hack"
+  word = "hack"
 
-text = "this hack is wack hack"
-word = "wack"
+  print censor(text, word)
 
-censor(text, word)
+#11/15
+  def count(sequence, item):
+    count = 0
+    
+    for target in sequence:
+      if target == item:
+        count += 1
+
+    # return an integer
+    return count
+
+  print count([1, 2, 1, 1], 1)
+
+#12/15
+  def purify(number_list):
+    even_list = []
+
+    for num in number_list:
+      if num % 2 == 0:
+        even_list.append(num)
+    
+    return even_list
+
+  # test case
+  purify([1,2,3])
+
+#13/15
+  def product(int_list):
+    product = 0
+    if len(int_list) > 0:
+      product = 1 
+
+    for num in int_list:
+      product *= num
+    
+    return product
+
+  print product([4, 5, 5])
