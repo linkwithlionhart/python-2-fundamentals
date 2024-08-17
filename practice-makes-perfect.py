@@ -173,3 +173,42 @@
     return product
 
   print product([4, 5, 5])
+
+#14/15
+  def remove_duplicates(ls):
+    ls = sorted(ls)
+    result = []
+
+    for target in ls:
+      if target not in result:
+        result.append(target)
+        print target
+
+    return result
+
+  print remove_duplicates([1, 1, 2, 2])
+
+#15/15
+  def median(ls):
+  ls = sorted(ls)
+  result = 0
+
+  # case has one item
+  if len(ls) == 1:
+    return ls[0]
+  # case is odd, return middle value
+  elif len(ls) % 2 != 0:
+    result = ls[len(ls) / 2]
+  # case is even, return average of middle 2 values
+  else:
+    low_median = int(float(len(ls)) / 2) - 1 
+    high_median = low_median + 1 
+    result = (ls[low_median] + ls[high_median]) / float(2)
+
+  return result
+
+# test cases
+  # even
+  print median([4, 5, 5, 4])
+  # odd 
+  print median([6, 8, 12, 2, 23])
