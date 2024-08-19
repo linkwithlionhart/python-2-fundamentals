@@ -37,17 +37,47 @@ def start_calendar():
     if user_choice == 'V':
       if len(calendar.keys()) < 1:
         print "Calendar empty."
-        break
       else: 
         print calendar
-        break
     elif user_choice == 'U':
       date = raw_input('What date? ')
       update = raw_input('Enter the update: ')
-
-
+      # dangerous: does not run any validations for the update
+      calendar[date] = update
+      print 'Update complete.'
+      print calendar
+    elif user_choice == 'A':
+      event = raw_input('Enter event: ')
+      date = raw_input('Enter date (MM/DD/YYYY): ')
+      if len(date) > 10 or int(date[6:]) < int(strftime("%Y")):
+        print 'Invalid date entered.'
+        try_again = raw_input('Try again? Y for Yes, N for No: ')
+        try_again = try_again.upper()
+        if try_again == 'Y':
+          continue
+        else:
+          start = False
+      else: 
+        calendar[date] = event
+        print 'Date successfully added.'
+        print calendar
+    elif user_choice == 'D':
+      if len(calendar.keys()) < 1: 
+        print 'Your calendar is empty.'
+      else:
+        event = raw_input('What event? ')
+      for date in calendar.keys():
+        if event == calendar[date]:
+          del calendar[date]
+          print 'Deletion successful.'
+          print calendar
+        else: 
+          print 'Invalid date entered.'
+    elif user_choice == 'X':
+      print 'See you later.'
+      start = False
+    else:
+      print 'Invalid command.'
+      start = False
 
 start_calendar()
-
-
-
