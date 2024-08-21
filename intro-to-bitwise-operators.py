@@ -55,4 +55,33 @@ print int(bin(5),2)
 print int('11001001', 2)
 
 #6/14
+shift_right = 0b1100
+shift_left = 0b1
 
+# Your code here!
+shift_right = shift_right >> 2 # output: 3
+shift_left = shift_left << 2 # output: 4
+
+print bin(shift_right)
+print int('0b11', 2)
+print bin(shift_left)
+print int('0b100', 2)
+
+#7/14
+print bin(0b1110 & 0b101)
+
+#8/14
+print bin(0b1110 | 0b101)
+
+#9/14
+print '0b1011'
+print bin(0b1110 ^ 0b101)
+
+#10/14
+print ~1
+print ~2
+print ~3
+print ~42
+print ~123
+
+#11/14
