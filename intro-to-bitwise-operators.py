@@ -85,3 +85,32 @@ print ~42
 print ~123
 
 #11/14
+def check_bit4(input):
+  num = input
+  mask = 0b01000
+  desired = num & mask
+  if desired > 0:
+    return 'on'
+  else: return 'off'
+
+print check_bit4(0b1000)
+
+#12/14
+a = 0b10111011
+mask = 0b100
+desired = a | mask
+
+print bin(desired)
+
+#13/14
+a = 0b11101110
+mask = 0b11111111
+desired = a ^ mask
+
+print bin(desired)
+
+#14/14
+def flip_bit(number, n):
+  bit_to_flip = 0b1 << (n -1)
+  result = number ^ bit_to_flip
+  return bin(result)
