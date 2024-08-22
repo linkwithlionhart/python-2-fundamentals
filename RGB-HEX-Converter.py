@@ -21,8 +21,35 @@ def rgb_hex():
   for color in RGB:  
     if color < 0 or color > 255:
       print invalid_msg
+      return
   val = (red << 16) + (green << 8) + blue
   print "%s" % hex(val)[2:].upper()
 
-rgb_hex()
+# rgb_hex()
+
+def hex_rgb():
+  invalid_msg = 'Invalid hexidecimal value. Try again.'
+  hex_val = raw_input('Enter a six-digit hexidecimal value: ')
+  
+  if len(hex_val) != 6:
+    print invalid_msg
+    return
+  else: 
+    hex_val = int(hex_val, 16)
+    print 'Hex_val: %d' % hex_val
+  
+  # represents two hexadecimal digits
+  two_hex_digits = 2**8
+  
+  # returns the first RGB value from right to left
+  blue = hex_val % two_hex_digits
+  hex_val = hex_val >> 8 
+  green = hex_val % two_hex_digits
+  hex_val = hex_val >> 8
+  red = hex_val % two_hex_digits
+
+  print red, green, red
+
+  # print the RGB values
+  print 'RGB(%s, %s, %s)' % (red, green, blue)
 
