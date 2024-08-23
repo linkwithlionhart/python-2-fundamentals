@@ -43,13 +43,30 @@ def hex_rgb():
   
   # returns the first RGB value from right to left
   blue = hex_val % two_hex_digits
-  hex_val = hex_val >> 8 
+  hex_val = hex_val >> 8
   green = hex_val % two_hex_digits
   hex_val = hex_val >> 8
   red = hex_val % two_hex_digits
 
-  print red, green, red
-
   # print the RGB values
   print 'RGB(%s, %s, %s)' % (red, green, blue)
+
+# hex_rgb()
+
+def convert():
+  while True:
+    option = raw_input('Enter 1 to convert RGB to HEX. Enter 2 to convert HEX to RGB. Enter X to Exit: ')
+
+    if option == '1':
+      print 'RGB to Hex...'
+      rgb_hex()
+    elif option == '2':
+      print 'Hex to RGB...'
+      hex_rgb()
+    elif option == 'X' or option == 'x':
+      break
+    else: 
+      print 'Error.'
+  
+convert()
 
